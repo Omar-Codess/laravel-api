@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return response()->json([
-        'success' => true,
-        'results' => [
-            'name' => 'Omar',
-            'state' => 'Italia'
-        ]
-    ]);
-});
+Route::get('/projects', [ProjectController::class, 'index']);
